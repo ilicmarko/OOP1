@@ -7,7 +7,7 @@ public class Stack<T> {
 
     public Stack(int s){
         velicina = s;
-        vrh = 0;
+        vrh = -1;
         elementi = (T[]) new Object[velicina]; // Ovde moze da dodje do greske zbog ne sigurnog kastovanja u tom slucaju @SuppressWarnings("unchecked")
     }
 
@@ -23,13 +23,13 @@ public class Stack<T> {
 
     public void push(T vrednost) throws IOException{
         if(vrh == velicina) throw new IOException("Stack je pun");
-        elementi[vrh++] = vrednost;
+        elementi[++vrh] = vrednost;
     }
 
     public T pop() throws IOException{
-        if(vrh == 0) throw new IOException("Stack je prazan");
-        T tmp = elementi[vrh];
-        elementi[vrh--] = null;
+        if(vrh == -1) throw new IOException("Stack je prazan");
+        T tmp = elementi[--vrh];
+        elementi[vrh] = null;
         return tmp;
     }
 }
