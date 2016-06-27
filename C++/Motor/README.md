@@ -1,0 +1,1 @@
+# A gde je turbina?
