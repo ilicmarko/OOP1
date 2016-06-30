@@ -28,8 +28,8 @@ public class Stack<T> {
 
     public T pop() throws IOException{
         if(vrh == 0) throw new IOException("Stack je prazan");
-        T tmp = elementi[--vrh];
-        elementi[vrh] = null;
+        T tmp = elementi[vrh];
+        elementi[vrh--] = null;
         return tmp;
     }
 }
