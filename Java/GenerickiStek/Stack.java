@@ -1,7 +1,6 @@
 import java.io.IOException;
 
-
-<T> {
+public class Stack<T> {
     private int velicina;
     private int vrh;
     private T[] elementi ;
@@ -30,7 +29,7 @@ import java.io.IOException;
     public T pop() throws IOException{
         if(vrh == -1) throw new IOException("Stack je prazan");
         T tmp = elementi[vrh];
-        elementi[vrh] = null;
+        elementi[vrh--] = null;
         return tmp;
     }
 }
