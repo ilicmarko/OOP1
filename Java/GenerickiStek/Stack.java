@@ -29,7 +29,7 @@ public class Stack<T> {
     public T pop() throws IOException{
         if(vrh == -1) throw new IOException("Stack je prazan");
         T tmp = elementi[vrh];
-        elementi[vrh--] = null;
+        elementi[vrh--] = null; // Mnogo bitno!!!
         return tmp;
     }
 }
